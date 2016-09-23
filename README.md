@@ -7,3 +7,5 @@ Basic Feature of the APP:
 3. Remove item
 
 All the above features are include in just one screen
+
+![Sample](SampleTodoAppGIF.gif)
