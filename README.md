@@ -1,11 +1,18 @@
-# SimpleTodo
-Android Pre-work
-This is my first attempt to create an Andriod Pre-Work application at CoderPath's bootcamp. The instructions for this project found at this url: https://courses.codepath.com/snippets/intro_to_android/prework.
-Basic Feature of the APP: 
-1. View existing list of items
-2. Add new item 
-3. Remove item
+# Pre-work - *Simple Todo*
 
-All the above features are include in just one screen
+** Simple Todo** is an android app that allows building a todo list and basic todo items management functionality including adding new items, editing and deleting an existing item.
 
-![Sample](SampleTodoAppGIF.gif)
+Time spent: **10** hours spent in total
+
+## User Stories
+
+The following **required** functionality is completed:
+
+* [ ] User can **successfully add and remove items** from the todo list
+
+
+## Video Walkthrough 
+
+Here's a walkthrough of implemented user stories:
+
+GIF created with [GifCam] ![Sample](SampleTodoAppGIF.gif)
