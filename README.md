@@ -16,7 +16,8 @@ The following **required** functionality is completed:
 
 Here's a walkthrough of implemented user stories:
 GIF created with [GifCam]![Sample](SampleTodoAppGIF.gif)
-Edit Screen:
+
+## Edit Screen
 ![Sample](EditScreenGif.gif)
 
 ## Notes
