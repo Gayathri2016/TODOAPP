@@ -2,4 +2,6 @@
     <string name="app_name">SimpleTodo</string>
     <string name="add">ADD</string>
     <string name="add_item">Add a new Item...</string>
+    <string name="edit">Edit Item Below</string>
+    <string name="save">Save</string>
 </resources>
