@@ -1,4 +1,4 @@
-package com.example.gayathrim.simpletodo;
+package com.example.gayathrim.TODOAPP;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,12 +26,7 @@ public class editActivity extends AppCompatActivity {
        txt.setText((CharSequence) my_obj);
 
 
-
     }
-
-
-
-
 
     public void onSaveItem(View view) {
 

@@ -1,4 +1,4 @@
-package com.example.gayathrim.simpletodo;
+package com.example.gayathrim.TODOAPP;
 
 import org.junit.Test;
 

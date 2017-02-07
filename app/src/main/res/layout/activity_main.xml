@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.example.gayathrim.simpletodo.MainActivity">
+    tools:context="com.example.gayathrim.TODOAPP.MainActivity">
 
     <ListView
         android:layout_width="match_parent"
