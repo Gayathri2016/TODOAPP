@@ -18,9 +18,9 @@ The following **required** functionality is completed:
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
-GIF created with [GifCam]![Sample](TodoAppGIF.gif)
+GIF created with [GifCam]!
 
-## Edit Screen
+
 ![Sample](EditScreenGif.gif)
 
 ## Notes
