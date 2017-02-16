@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -12,12 +13,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import com.example.gayathrim.todoapp.EditDialog.onSubmitListener;
+
 
 import java.util.ArrayList;
 
 import static com.example.gayathrim.todoapp.R.id.lvItems;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements onSubmitListener {
 
     ArrayList<String> todoItems;
     ArrayAdapter<String> aToDOAdapter;
@@ -29,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         dbHelper = new TaskListDbHelper(this);
         Items = (ListView) findViewById(lvItems);
 
@@ -61,17 +64,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-                Intent editScreen = new Intent(getApplicationContext(), editActivity.class);
                 String selectedFromList = (String) (Items.getItemAtPosition(position));
+
+
+              /*  Intent editScreen = new Intent(getApplicationContext(), editActivity.class);
+              String selectedFromList = (String) (Items.getItemAtPosition(position));
                 Bundle extras = new Bundle();
                 deleteTask(selectedFromList);
                 extras.putSerializable("position", position);
                 extras.putSerializable("obj_to_pass", selectedFromList);
-                editScreen.putExtras(extras);
-               // todoItems.remove(position);
+
                 aToDOAdapter.notifyDataSetChanged();
+
+                editScreen.putExtras(extras);
                // writeItems();
-                startActivity(editScreen);
+                startActivity(editScreen);*/
+                showEditDialog(selectedFromList);
+
+
             }
 
 
@@ -163,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void updateTask(String name, int id) {
+    public void updateTask(String name) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         try {
@@ -198,11 +208,31 @@ public class MainActivity extends AppCompatActivity {
             name = data.getExtras().getString("name");
            int code =  data.getExtras().getInt("position");
             if(!name.isEmpty()) {
-                updateTask(name, code);
+                updateTask(name);
                 //todoItems.add(code, name);
                 aToDOAdapter.notifyDataSetChanged();
             }
         }
+    }
+
+    private void showEditDialog(String item) {
+
+
+       FragmentManager fm = getSupportFragmentManager();
+        Bundle bundle = new Bundle();
+        bundle.putString("edttext", item);
+        // set Fragmentclass Arguments
+        deleteTask(item);
+        EditDialog editDialog = EditDialog.newInstance("Edit Item Below");
+        //editDialog.setArguments(bundle);
+        editDialog.mListener = MainActivity.this;
+        editDialog.text = item;
+        editDialog.show(fm, "edit_dialog");
+    }
+    @Override
+    public void setOnSubmitListener(String arg) {
+        updateTask(arg);
+
     }
 
 
