@@ -23,6 +23,9 @@ GIF created with [GifCam]!
 
 
 ![Sample](EditScreenGif.gif)
+## Dialog Fragment
+
+![Sample][TODOAPPGif.gif)
 
 ## Notes
 
