@@ -11,7 +11,7 @@
     tools:context="com.example.gayathrim.todoapp.editActivity">
 
     <TextView
-        android:text="@string/edit"
+        android:text="Edit Item Below"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -35,14 +35,14 @@
         android:layout_marginTop="58dp"
         android:id="@+id/etEditText"
         android:hint="Edit here..." />
-
+    <requestFocus />
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:onClick="onSaveItem"
         android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/etEditText"
-        android:layout_alignStart="@+id/etEditText"
+
         android:id="@+id/btnSave"
         android:text="@string/save" />
+
 </RelativeLayout>

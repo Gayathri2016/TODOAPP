@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:text="Task Name"
+        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:id="@+id/taskname"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/etEditText"
+        android:hint="Enetr here..." />
+
+    <TextView
+        android:text="Due Date"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/duedate"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        />
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/etDate"
+        android:hint="Enetr here..." />
+    <!--<DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"></DatePicker>-->
+
+</LinearLayout>
