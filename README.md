@@ -26,13 +26,13 @@ The following **required** functionality is completed:
 Here's a walkthrough of implemented user stories:
 GIF created with [GifCam]!
 
+![sample](MainDialogGif.gif)
 
-![Sample](EditScreenGif.gif)
 ## Dialog Fragment
 
 ![Sample](TODOAPPGif.gif)
 
-![sample](MainDialogGif.gif)
+![Sample](EditScreenGif.gif)
 
 ## Notes
 
