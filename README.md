@@ -19,7 +19,8 @@ The following **required** functionality is completed:
 
 * [ ] Added a DialogFragment instead of new Activity for editing items
 * [ ] Added menu item to the app
-
+* [ ] Added style of the todo items in the list using a custom adapter
+* [ ] Added edited date to the list item
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
