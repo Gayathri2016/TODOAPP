@@ -4,7 +4,7 @@ Android PreWork
 
 This app that allows building a todo list and basic todo items management functionality including adding new items, editing and deleting an existing item.
 
-Time spent: **10** hours spent in total
+Time spent: **16** hours spent in total
 
 ## User Stories
 
