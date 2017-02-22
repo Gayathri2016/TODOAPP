@@ -39,15 +39,13 @@ public class AddActivity extends AppCompatActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
         Bundle extras = getIntent().getExtras();
-       // my_obj = extras.getSerializable("obj_to_pass");
+
         mEditText=(EditText) findViewById(R.id.etEditText);
         dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
 
         setDateTimeField();
 
 
-       // mEditText.setText((CharSequence) my_obj);
-       // mdate.setText((CharSequence) my_obj);
 
 
     }

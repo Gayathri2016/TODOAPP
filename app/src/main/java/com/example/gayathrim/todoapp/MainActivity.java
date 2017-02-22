@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements onSubmitListener 
         Items.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                String item = (String) (Items.getItemAtPosition(position));
+                String item = aToDOAdapter!=null? aToDOAdapter.getItem(position).get_name():"";
                 todoItems.remove(position);
                 aToDOAdapter.notifyDataSetChanged();
                 deleteTask(item);
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements onSubmitListener 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-                //String selectedFromList = (String) (Items.getItemAtPosition(position));
+
                 showEditDialog(position);
 
 
@@ -138,16 +138,8 @@ public class MainActivity extends AppCompatActivity implements onSubmitListener 
         }
     }
 
-    public void onClick(View view) {
-        Intent i = new Intent(MainActivity.this, editActivity.class);
-        i.putExtra("mode", 2); // pass arbitrary data to launched activity
-        startActivityForResult(i, REQUEST_CODE);
-    }
-
-
     private void readItems() {
-        // File filesDir = getFilesDir();
-        // File file = new File(filesDir, "todo1.txt");
+
 
         todoItems = new ArrayList<Task>();
         String selectQuery = "SELECT  * FROM tasks";
@@ -162,22 +154,22 @@ public class MainActivity extends AppCompatActivity implements onSubmitListener 
                     todoItems.add(new Task(cursor.getString(idx), cursor.getString(idx1)));
 
 
-                    //todoItems.add(cursor.getString(idx));
+
                 } while (cursor.moveToNext());
 
             }
 
             if (aToDOAdapter == null) {
                 aToDOAdapter = new com.example.gayathrim.todoapp.ListAdapter(this, R.layout.taskitemlistrow, todoItems);
-               // aToDOAdapter = new ArrayAdapter<Task>(this, android.R.layout.simple_list_item_1, todoItems);
+
                 Items.setAdapter(aToDOAdapter);
-                // aToDOAdapter.notifyDataSetChanged();
+
             } else {
                 aToDOAdapter.clear();
                 aToDOAdapter.addAll(todoItems);
                 aToDOAdapter.notifyDataSetChanged();
             }
-            //todoItems = new ArrayList<String>(FileUtils.readLines(file));
+
             cursor.close();
             db.close();
         } catch (Exception e) {
@@ -192,13 +184,11 @@ public class MainActivity extends AppCompatActivity implements onSubmitListener 
     }
 
     private void writeItems(String item) {
-        //File filesDir = getFilesDir();
-        // File file = new File(filesDir, "todo1.txt");
+
 
 
         try {
-            //FileUtils.writeLines(file, todoItems);
-            //  String task = String.valueOf(etEditText.getText().toString());
+
             dbHelper = new TaskListDbHelper(this);
             SQLiteDatabase db = dbHelper.getWritableDatabase();
             ContentValues cv = new ContentValues();
@@ -237,9 +227,9 @@ public class MainActivity extends AppCompatActivity implements onSubmitListener 
     }
 
     public void onAddItem(View view) {
-        //aToDOAdapter.add(etEditText.getText().toString());
+
         String task = String.valueOf(etEditText.getText().toString());
-        //etEditText.setText("");
+
         writeItems(task);
 
     }
@@ -252,10 +242,10 @@ public class MainActivity extends AppCompatActivity implements onSubmitListener 
             // Extract name value from result extras
             name = data.getExtras().getString("name");
             date = data.getExtras().getString("Date");
-            //  int code =  data.getExtras().getInt("position");
+
             if (!name.isEmpty() && !date.isEmpty()) {
                 updateTask(name, date);
-                //todoItems.add(code, name);
+
                 if (aToDOAdapter != null) {
                     aToDOAdapter.notifyDataSetChanged();
                 }
@@ -275,7 +265,7 @@ public class MainActivity extends AppCompatActivity implements onSubmitListener 
         // set Fragmentclass Arguments
         deleteTask(name);
         EditDialog editDialog = EditDialog.newInstance("Edit Item Below");
-        //editDialog.setArguments(bundle);
+
         editDialog.mListener = MainActivity.this;
         editDialog.text = name;
         editDialog.date = date;

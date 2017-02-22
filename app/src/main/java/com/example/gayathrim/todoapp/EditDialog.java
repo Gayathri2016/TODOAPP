@@ -37,7 +37,7 @@ public class EditDialog extends DialogFragment implements OnClickListener {
     @Override
     public void onClick(View view) {
         if(view.getId() == R.id.button1) {
-            //Toast.makeText(getActivity(), "button clicked", Toast.LENGTH_LONG).show();
+           
             mListener.setOnSubmitListener(mEditText.getText().toString(), mdate.getText().toString());
             dismiss();
         }else if(view == mdate) {
