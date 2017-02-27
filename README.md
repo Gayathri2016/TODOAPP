@@ -14,6 +14,7 @@ The following **required** functionality is completed:
 * [ ] User can **successfully edit items** from the todo list
 * [ ] Persist the todo items into SQLite instead of a text file using SQLiteOpenHelper
 * [ ] Improve style of the todo items in the list using a custom adapter
+* [ ] added a DialogFragment instead of new Activity for editing items
 
 ## Extensions 
 
